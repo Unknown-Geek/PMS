@@ -1,10 +1,7 @@
-package Client;
+
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
-import entity.Product;
-import repository.ProductItems;
 
 public class TestPMS {
 
@@ -21,7 +18,7 @@ public class TestPMS {
         double price = 0;
         String name = "",type = "";
         Scanner sc = new Scanner(System.in);
-        repository.ProductItems productItems = new ProductItems();
+        ProductItems productItems = new ProductItems();
         while(true){
             displayMenu();
             choice = sc.nextInt();

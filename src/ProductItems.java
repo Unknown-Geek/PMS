@@ -1,7 +1,6 @@
-package repository;
+
 
 import java.util.ArrayList;
-import entity.Product;
 
 public class ProductItems {
     static ArrayList<Product> productList = new ArrayList<>();
@@ -48,13 +47,15 @@ public class ProductItems {
             return ;
         }
         
-        System.out.println("Product id\tName\tType\tPrice\tQuantity\tAvailability");
-        System.out.println("--------------------------------------------------------------------");
-        
-        for(Product product : productList){
+        System.out.println("+------------+----------------------+-----------------+------------+------------+--------------+");
+        System.out.println("| Product id |         Name         |       Type      |   Price    |  Quantity  | Availability |");
+        System.out.println("+------------+----------------------+-----------------+------------+------------+--------------+");
+
+        for (Product product : productList) {
             String stock = product.inStock ? "In Stock" : "Out of Stock";
-            System.out.printf("%d\t\t%s\t%s\t%.2f\t%d\t\t%s%n", 
-                product.pid, product.name, product.type, product.price, product.quantity, stock);
+            System.out.printf("| %-10d | %-20s | %-15s | %-10.2f | %-10d | %-12s |%n", 
+                            product.pid, product.name, product.type, product.price, product.quantity, stock);
+            System.out.println("+------------+----------------------+-----------------+------------+------------+--------------+");
         }
     }
 }
